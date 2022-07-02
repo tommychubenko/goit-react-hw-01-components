@@ -1,4 +1,5 @@
-@import-normalize; /* bring in normalize.css styles */
+@import-normalize;
+/* bring in normalize.css styles */
 
 body {
   margin: 0;
@@ -15,6 +16,10 @@ code {
     monospace;
 }
 
+.wrapper {
+  text-align: center;
+}
+
 .profile {
   display: flex;
   flex-direction: column;
@@ -22,7 +27,7 @@ code {
   align-items: center;
 }
 
-.avatar{
+.avatar {
   width: 200px;
   border: 5px solid;
   border-radius: 120px;
@@ -31,16 +36,9 @@ code {
 .name {
   font-weight: 500;
   font-size: 20px;
-  text-align: center;
+
 }
 
-.tag{
-  text-align: center;
-}
-
-.location {
-  text-align: center;
-}
 
 .stats {
   display: flex;
@@ -55,11 +53,93 @@ code {
   flex-direction: column;
 }
 
-.stats li:not(:last-child){
+.stats li:not(:last-child) {
   margin-right: 20px;
 }
 
 .quantity {
   font-weight: 500;
   font-size: 20px;
+}
+
+.statistics {
+  /* background-color: grey; */
+  text-align: center;
+}
+
+.stat-list {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.stat-list .item {
+  /* background-color: red; */
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 50px;
+}
+
+/* .stat-list .item:not(:last-child){
+  margin-right: 10px;
+} */
+
+.label {
+  margin-bottom: 5px;
+}
+
+.percentage {
+  font-size: 20px;
+}
+
+
+
+.friend-list {
+  list-style: none;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 40px;
+
+}
+
+.friend-list .item {
+
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  /* background-color: #beb4ab; */
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #000000;
+  box-shadow: 3px 3px 20px 0px rgba(33, 33, 33, 1);
+  border-radius: 67px;
+  width: 300px;
+}
+
+.friend-list .item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.friend-list .item .status {
+  margin-bottom: 15px;
+}
+
+.transaction-history {
+
+  margin: 0 auto;
+}
+
+.transaction-history th {
+  width: 200px;
+  background-color: lightblue;
+}
+
+.transaction-history tr:nth-child(even) {
+background-color: lightgrey;
 }
