@@ -1,12 +1,31 @@
 import PropTypes from 'prop-types';
 
-const transationMarkup = ({ type, amount, currency }) => {
+const transationMarkup = ({ props }) => {
   return (
-    <tr>
-      <td>{type}</td>
-      <td>{amount}</td>
-      <td>{currency}</td>
-    </tr>
+    props && (
+      <div>
+        <table className="transaction-history">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Amount</th>
+              <th>Currency</th>
+            </tr>
+          </thead>
+          <tbody>
+            {props.map(transaction => {
+              return (
+                <tr key={transaction.id}>
+                  <td>{transaction.type}</td>
+                  <td>{transaction.amount}</td>
+                  <td>{transaction.currency}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    )
   );
 };
 

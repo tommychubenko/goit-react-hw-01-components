@@ -1,12 +1,27 @@
 import PropTypes from 'prop-types';
 
-const friendsMarkup = ({ avatar, name, isOnline }) => {
+const friendsMarkup = ({ props }) => {
   return (
-    <li className="item">
-      <span className="status">{isOnline ? '🟢Online' : '🔴Offline'}</span>
-      <img className="avatar" src={avatar} alt="User avatar" width="48" />
-      <p className="name">{name}</p>
-    </li>
+    props && (
+      <ul className="friend-list">
+        {props.map(friend => {
+          return (
+            <li className="item" key={friend.id}>
+              <span className="status">
+                {friend.isOnline ? '🟢Online' : '🔴Offline'}
+              </span>
+              <img
+                className="avatar"
+                src={friend.avatar}
+                alt="User avatar"
+                width="48"
+              />
+              <p className="name">{friend.name}</p>
+            </li>
+          );
+        })}
+      </ul>
+    )
   );
 };
 
