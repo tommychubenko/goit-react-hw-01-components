@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 
 const SocialNetworkMarkup = ({ props }) => {
-  const { avatar, username, location, tag, stats } = props;
+  const { avatar, username, location, tag } = props;
+  const { followers, views, likes } = props.stats;
   return (
     props && (
       <div className="profile">
@@ -15,15 +16,15 @@ const SocialNetworkMarkup = ({ props }) => {
         <ul className="stats">
           <li>
             <span className="label">Followers</span>
-            <span className="quantity">{stats.followers}</span>
+            <span className="quantity">{followers}</span>
           </li>
           <li>
             <span className="label">Views</span>
-            <span className="quantity">{stats.views}</span>
+            <span className="quantity">{views}</span>
           </li>
           <li>
             <span className="label">Likes</span>
-            <span className="quantity">{stats.likes}</span>
+            <span className="quantity">{likes}</span>
           </li>
         </ul>
       </div>

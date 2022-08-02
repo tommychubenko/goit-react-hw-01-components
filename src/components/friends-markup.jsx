@@ -5,18 +5,19 @@ const friendsMarkup = ({ props }) => {
     props && (
       <ul className="friend-list">
         {props.map(friend => {
+          const { id, isOnline, avatar, name } = friend;
           return (
-            <li className="item" key={friend.id}>
+            <li className="item" key={id}>
               <span className="status">
-                {friend.isOnline ? '🟢Online' : '🔴Offline'}
+                {isOnline ? '🟢Online' : '🔴Offline'}
               </span>
               <img
                 className="avatar"
-                src={friend.avatar}
+                src={avatar}
                 alt="User avatar"
                 width="48"
               />
-              <p className="name">{friend.name}</p>
+              <p className="name">{name}</p>
             </li>
           );
         })}

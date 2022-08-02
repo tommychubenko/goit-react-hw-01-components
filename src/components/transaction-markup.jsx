@@ -14,11 +14,12 @@ const transationMarkup = ({ props }) => {
           </thead>
           <tbody>
             {props.map(transaction => {
+              const { id, type, amount, currency } = transaction;
               return (
-                <tr key={transaction.id}>
-                  <td>{transaction.type}</td>
-                  <td>{transaction.amount}</td>
-                  <td>{transaction.currency}</td>
+                <tr key={id}>
+                  <td>{type}</td>
+                  <td>{amount}</td>
+                  <td>{currency}</td>
                 </tr>
               );
             })}
